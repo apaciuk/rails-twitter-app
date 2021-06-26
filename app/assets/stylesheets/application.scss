@@ -8,6 +8,24 @@
 @import "jumpstart/sticky-footer";
 @import "jumpstart/announcements";
 
+.navbar {
+background-color: #1DA1F2!important;
+color:white!important;
+}
+.navbar li a {
+color:white!important;
+}
+.navbar-brand {
+color: white!important;
+}
+.btn-secondary {
+  background-color: white!important;
+  border-color:#AAB8C2!important;
+}
+a.btn-secondary a {
+  color:#1DA1F2!important;
+}
+
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {
   .container {
