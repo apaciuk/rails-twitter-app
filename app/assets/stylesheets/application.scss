@@ -22,6 +22,11 @@ color: white!important;
 a.btn.btn-light {
   color:#1DA1F2!important;
 }
+.btn-danger {
+background-color:rgb(201, 34, 145)!important; 
+border-color:rgb(201, 34, 145)!important; 
+text-decoration:none;
+}
 
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {

@@ -2,22 +2,28 @@
 
 
 <div class="row">
+  <% if !user_signed_in? %>
+  <div class="col-sm-6">
+<%= image_tag 'twonk.png', alt: 'Twonked', class: "mb-5" %>
+
+  </div>
+  <div class="col-sm-6 text-right">
+  <div class="jumbotron">
+  <h3 class="text-uppercase">Welcome to Twonked!</h3>
+  <p class="lead">Kindly sign up or log in to start Twonking.</p>
+  <hr>
+  <p class="text-muted">Awesome new site for disenfranchised ex Twitter users.</p>
+  <% else %>
   <div class="col-sm-6">
   <%= image_tag avatar_path(current_user, size: 40), height: 80, width: 80, class: "rounded" %>
   </div>
-
   <div class="col-sm-6 text-right">
   <div class="jumbotron">
-  <% if !user_signed_in? %>
-  <h2 class="display-5">Welcome to Twonked!</h2>
-  <p class="lead">Kindly sign up or log in to start Twonking.</p>
-  <% else %>
-  <h2>Hello, start Twonking!</h2>
-  <%= link_to "Add New Twonk", new_tweet_path, class: "btn btn-success mb-4" %>
-
+  <h3 class="text-uppercase">Twonk Feed!</h3>
+  <hr>
+  <%= link_to "Add New Twonk", new_tweet_path, class: "btn btn-primary mb-4" %>
   <% end %>
-  
-</div>
+  </div>
 </div>
   
 </div>
@@ -34,7 +40,9 @@
                       <td><%= tweet.tweet %></td>
           
           
-            <td><%= link_to 'Show', tweet %></td>
+            <td><%= link_to 'Show',  tweet, class: "btn btn-dark" %></td>
+            <td> <%= link_to 'Delete', tweet, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+           
           
         <% end %>
       <% end %>
